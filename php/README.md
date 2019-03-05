@@ -7,18 +7,20 @@ https://php-build.github.io/
 **Arch:**
 
 ```
-bzip2     curl       gcc                icu         libjpeg-turbo
-libpng    libtidy    libxml2            libxslt     libzip
-make      openssl    postgresql-libs    readline    tar
+autoconf         bzip2     curl       gcc                icu
+libjpeg-turbo    libpng    libtidy    libxml2            libxslt
+libzip           make      openssl    postgresql-libs    readline
+tar
 ```
 
 **Fedora:**
 
 ```
-bzip2            bzip2-devel            gcc-c++           libcurl-devel
-libicu-devel     libjpeg-turbo-devel    libpng-devel      libtidy-devel
-libxml2-devel    libxslt-devel          libzip-devel      make
-openssl-devel    postgresql-devel       readline-devel    tar
+autoconf         bzip2            bzip2-devel            gcc-c++
+libcurl-devel    libicu-devel     libjpeg-turbo-devel    libpng-devel
+libtidy-devel    libxml2-devel    libxslt-devel          libzip-devel
+make             openssl-devel    postgresql-devel       readline-devel
+tar
 ```
 
 ### PHP version switcher installation
