@@ -1,0 +1,7 @@
+vendor
+app/var/log/*
+!app/var/log/.gitkeep
+app/var/lib/sessions/*
+!app/var/lib/sessions/.gitkeep
+app/var/lib/uploads/*
+!app/var/lib/uploads/.gitkeep
