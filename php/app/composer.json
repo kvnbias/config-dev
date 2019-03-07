@@ -1,0 +1,16 @@
+{
+    "name": "kev/app",
+    "description": "",
+    "require": {
+    },
+    "require-dev": {
+        "monolog/monolog": "^1.24"
+    },
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Kevin Baisas",
+            "email": "kevin.baisas@gmail.com"
+        }
+    ]
+}
