@@ -2,7 +2,7 @@
 
 currdir="$(pwd)"
 domain=www.localhost.com
-passphrase=chickenburrito
+passphrase=passphrase
 
 echo "
 
@@ -32,11 +32,19 @@ echo $passphrase >> $currdir/$domain.pass
 
 echo "
 
+For firefox:
+> Now go to: about:preferences#privacy
+> Go to Certificates
+> Go to View Certificates
+> Go to Authorities tab
+> Import 'www.localhost.com-ca.pem'
+> Point 'www.localhost.com.crt' && 'www.localhost.com.key' to your server
+
 For chrome:
 > Now go to: chrome://settings/certificates
-> Go to authorities tab
-> Import `www.localhost.com-ca.pem`
-> Point `www.localhost.com.crt` && `www.localhost.com.key` to your server
+> Go to Authorities tab
+> Import 'www.localhost.com-ca.pem'
+> Point 'www.localhost.com.crt' && 'www.localhost.com.key' to your server
 
 
 "
