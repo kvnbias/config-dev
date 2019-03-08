@@ -357,7 +357,6 @@ if (!$session->isValid(5)) {
                     <form method="post" enctype="multipart/form-data">
                         <p>
                             <?php
-                                var_dump($_FILES);
                                 if (
                                     array_key_exists('file', $_FILES) &&
                                     !empty($_FILES['file']['name'])

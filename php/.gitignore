@@ -1,4 +1,4 @@
-vendor
+app/vendor
 app/var/log/*
 !app/var/log/.gitkeep
 app/var/lib/sessions/*
