@@ -30,7 +30,27 @@ openssl x509 -req -in $currdir/$domain.csr -CA $currdir/$domain-ca.pem \
 cat $currdir/$domain.crt $currdir/$domain.key > $currdir/$domain.pem
 echo $passphrase >> $currdir/$domain.pass
 
+sudo chown root:root $currdir/$domain-ca.key
+sudo chown root:root $currdir/$domain-ca.pem
+sudo chown root:root $currdir/$domain-ca.srl
+sudo chown root:root $currdir/$domain.crt
+sudo chown root:root $currdir/$domain.csr
+sudo chown root:root $currdir/$domain.key
+sudo chown root:root $currdir/$domain.pass
+sudo chown root:root $currdir/$domain.pem
+
+sudo chmod 600 $currdir/$domain-ca.key
+sudo chmod 600 $currdir/$domain-ca.pem
+sudo chmod 600 $currdir/$domain-ca.srl
+sudo chmod 600 $currdir/$domain.crt
+sudo chmod 600 $currdir/$domain.csr
+sudo chmod 600 $currdir/$domain.key
+sudo chmod 600 $currdir/$domain.pass
+sudo chmod 600 $currdir/$domain.pem
+
 echo "
+
+If using SELinux make sure the certificates have `httpd_sys_content_t` context
 
 For firefox:
 > Now go to: about:preferences#privacy
