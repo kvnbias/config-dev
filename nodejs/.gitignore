@@ -1,0 +1,7 @@
+app/node_modules
+app/var/lib/uploads/*
+!app/var/lib/uploads/.gitkeep
+app/var/lib/sessions/*
+!app/var/lib/sessions/.gitkeep
+app/var/log/*
+!app/var/log/.gitkeep
