@@ -347,8 +347,8 @@ if (!$session->isValid(5)) {
         <h1>Welcome to <strong>PHP</strong> setup!</h1>
 
         <div class="content">
-            <p>This page is used to test <strong>varnish</strong> cache
-            and <strong>PHP</strong> configurations.
+            <p>This page is used to test <strong>varnish</strong> cache,
+            <strong>NginX</strong> and <strong>PHP</strong> configurations.
             Some fragments requires <strong>ESI</strong> to be enabled in varnish.</p>
 
             <div class="alert">
