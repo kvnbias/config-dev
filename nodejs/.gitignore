@@ -5,3 +5,7 @@ app/var/lib/sessions/*
 !app/var/lib/sessions/.gitkeep
 app/var/log/*
 !app/var/log/.gitkeep
+app/assets/socket.io/*
+!app/assets/socket.io/.gitkeep
+app/assets/sockjs/*
+!app/assets/sockjs/.gitkeep

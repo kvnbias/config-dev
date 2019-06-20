@@ -4,7 +4,7 @@ const twig = require('twig');
 const path = require('path');
 const body = require('koa-body')({ multipart: true });
 
-const getRouter = function (port) {
+const getRouter = function (port, pid, websocket, websocketHost) {
 
   const router = new Router();
 
@@ -27,7 +27,7 @@ const getRouter = function (port) {
     const content = new Promise((resolve, reject) => {
       twig.renderFile(
         path.join(__dirname, '../views/index.html.twig'),
-        { port, time, hasUpload, fileName, datetime },
+        { port, pid, websocket, websocketHost, time, hasUpload, fileName, datetime },
         (err, html) => err ? reject(err) : resolve(html)
       );
     });

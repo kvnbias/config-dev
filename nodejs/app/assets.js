@@ -33,8 +33,8 @@ app.use(async (ctx, next) => {
 });
 
 const options = {
-  key: fs.readFileSync(path.join(__dirname, '../../certificate/www.localhost.com.key')),
-  cert: fs.readFileSync(path.join(__dirname, '../../certificate/www.localhost.com.crt'))
+  key: fs.readFileSync(path.join(__dirname, '../../certificate/localhost.key')),
+  cert: fs.readFileSync(path.join(__dirname, '../../certificate/localhost.crt'))
 };
 
 const server = protocol === 'http'

@@ -6,6 +6,12 @@
     <head>
         <title>Test Page for the Varnish HTTP Server on Fedora</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        {% if websocket == 'socketio' %}
+          <script src="https://assets.localhost.com/socket.io/socket.io.js" type="application/javascript"></script>
+        {% elseif websocket == 'sockjs' %}
+          <script src="https://assets.localhost.com/sockjs/sockjs.min.js" type="application/javascript"></script>
+          <script src="https://assets.localhost.com/sockjs/multiplex.js" type="application/javascript"></script>
+        {% endif %}
         <style type="text/css">
             /*<![CDATA[*/
             body {
@@ -15,6 +21,9 @@
                 font-family: sans-serif,helvetica;
                 margin: 0;
                 padding: 0;
+            }
+            input[type="text"] {
+                color: #000;
             }
             :link {
                 color: #c00;
@@ -121,8 +130,8 @@
                 <h2>Websocket</h2>
                 <div class="content">
                     <div id="websocket-contianer">
-                        <h3>Accessed port: {{ port }} {{ time }}</h3>
-                        <form name="message-form">
+                        <h3>Accessed port: {{ port }} {{ pid }} {{ time }}</h3>
+                        <form name="message-form" data-websocket="{{ websocket }}" data-websocket-host="{{ websocketHost }}">
                             <input type="text" name="message" />
                         </form>
                         <div id="messages-container">
@@ -134,6 +143,6 @@
         </div>
     
         {# A different domain serving assets #}
-        <script src="https://localhost:6500/js/websocket.js" async></script>
+        <script src="https://assets.localhost.com/js/websocket.js" type="application/javascript"></script>
     </body>
 </html>
