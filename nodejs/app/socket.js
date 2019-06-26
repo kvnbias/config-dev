@@ -160,7 +160,7 @@ switch (websocket) {
     break;
   case 'cws':
     const ClusterWS = require('clusterws');
-    const wss = new ClusterWS({
+    wss = new ClusterWS({
       port, // specify port of the application
       worker: function() {
         const wss = this.wss;
