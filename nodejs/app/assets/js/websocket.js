@@ -1,3 +1,4 @@
+
 (function() {
 
   const container = document.querySelector('#messages-container');
@@ -147,6 +148,66 @@
           messageForm.removeEventListener('submit', send);
           console.log('closed')
         };
+        break;
+      case 'cws':
+        const cws = new ClusterWS({url: `wss://${websocketHost}/socket` });
+
+        send = e => {
+          e.preventDefault();
+          console.log('sending message');
+          cws.send('message', messageForm.querySelector('input[name=message]').value);
+          messageForm.querySelector('input[name=message]').value = '';
+        }
+
+        cws.on('connect', () => {
+          const time = new Date().toISOString();
+          container.innerHTML = `
+            <div class="message-container">
+              <span><strong>Connection opened</strong></span>
+              <div class="message">
+                <span>${time}</span>
+              </div>
+            </div>
+          ` + container.innerHTML;
+
+          messageForm.addEventListener('submit', send);
+        });
+
+        cws.on('message', data => {
+          container.innerHTML = `
+            <div class="message-container">
+              <span><strong>New message</strong></span>
+              <div class="message">
+                <span>${data}</span>
+              </div>
+            </div>
+          ` + container.innerHTML;
+        });
+
+        cws.on('error', () => {
+          const time = new Date().toISOString();
+          container.innerHTML = `
+            <div class="message-container">
+              <span><strong>Error occured</strong></span>
+              <div class="message">
+                  <span>${time}</span>
+              </div>
+            </div>
+          ` + container.innerHTML;
+        });
+
+        cws.on('disconnect', () => {
+          const time = new Date().toISOString();
+          container.innerHTML = `
+            <div class="message-container">
+              <span><strong>Disconnected</strong></span>
+              <div class="message">
+                  <span>${time}</span>
+              </div>
+            </div>
+          ` + container.innerHTML;
+        });
+
         break;
       default:
         const ws = new WebSocket(`wss://${websocketHost}/socket`);

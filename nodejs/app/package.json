@@ -7,11 +7,12 @@
   "license": "GPLv3",
   "scripts": {
     "nodemon": "./node_modules/concurrently/bin/concurrently.js \"./node_modules/nodemon/bin/nodemon.js index.js -- -p 11060 -P http\" \"./node_modules/nodemon/bin/nodemon.js assets.js -- -p 6500 -P http\"",
-    "cpws": "mkdir -p ./assets/socket.io && cp ./node_modules/socket.io-client/dist/socket.io.js ./assets/socket.io/socket.io.js &&  cp ./node_modules/socket.io-client/dist/socket.io.js.map ./assets/socket.io/socket.io.js.map && mkdir -p ./assets/sockjs && cp ./node_modules/sockjs-client/dist/sockjs.min.js ./assets/sockjs/sockjs.min.js &&  cp ./node_modules/sockjs-client/dist/sockjs.min.js.map ./assets/sockjs/sockjs.min.js.map &&  cp ./node_modules/websocket-multiplex/multiplex_client.js ./assets/sockjs/multiplex.js"
+    "cpws": "mkdir -p ./assets/socket.io && cp ./node_modules/socket.io-client/dist/socket.io.js ./assets/socket.io/socket.io.js &&  cp ./node_modules/socket.io-client/dist/socket.io.js.map ./assets/socket.io/socket.io.js.map && mkdir -p ./assets/sockjs && cp ./node_modules/sockjs-client/dist/sockjs.min.js ./assets/sockjs/sockjs.min.js &&  cp ./node_modules/sockjs-client/dist/sockjs.min.js.map ./assets/sockjs/sockjs.min.js.map &&  cp ./node_modules/websocket-multiplex/multiplex_client.js ./assets/sockjs/multiplex.js && mkdir -p ./assets/clusterws && cp ./node_modules/clusterws-client-js/browser/clusterws.min.js ./assets/clusterws/clusterws.js"
   },
   "dependencies": {
     "chalk": "^2.4.2",
     "clusterws": "^3.3.1",
+    "clusterws-client-js": "^3.3.0",
     "commander": "^2.20.0",
     "koa": "^2.7.0",
     "koa-body": "^4.1.0",
@@ -25,6 +26,7 @@
     "sockjs-client": "^1.3.0",
     "sticky-session": "^1.1.2",
     "twig": "^1.13.3",
+    "uWebSockets.js": "uNetworking/uWebSockets.js#v15.11.0",
     "websocket-multiplex": "^0.1.0",
     "winston": "^3.2.1",
     "ws": "^7.0.0"

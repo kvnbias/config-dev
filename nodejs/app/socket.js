@@ -21,8 +21,8 @@ const protocol = commander.protocol;
 const websocket = commander.websocket;
 
 const options = {
-  key: fs.readFileSync(path.join(__dirname, '../../certificate/localhost.key')),
-  cert: fs.readFileSync(path.join(__dirname, '../../certificate/localhost.crt'))
+  key: fs.readFileSync(path.join(__dirname, '../../certificate/socket.localhost.com.key')),
+  cert: fs.readFileSync(path.join(__dirname, '../../certificate/socket.localhost.com.crt'))
 };
 
 const server = protocol === 'https' ? https.createServer(options) : http.createServer();
@@ -166,7 +166,10 @@ switch (websocket) {
         const wss = this.wss;
         const server = this.server;
 
-        wss.on('connection', (socket, req) => {})
+        wss.on('connection', (socket, req) => {
+          socket.send('message', `A new user has joined the chat:${port}:${process.pid}`);
+          socket.on('message', data => socket.send('message', data));
+        })
       },
       // tlsOptions: options
     });

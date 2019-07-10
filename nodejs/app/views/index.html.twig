@@ -11,6 +11,8 @@
         {% elseif websocket == 'sockjs' %}
           <script src="https://assets.localhost.com/sockjs/sockjs.min.js" type="application/javascript"></script>
           <script src="https://assets.localhost.com/sockjs/multiplex.js" type="application/javascript"></script>
+        {% elseif websocket == 'cws' %}
+          <script src="https://assets.localhost.com/clusterws/clusterws.js" type="application/javascript"></script>
         {% endif %}
         <style type="text/css">
             /*<![CDATA[*/

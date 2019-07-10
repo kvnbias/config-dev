@@ -30,7 +30,7 @@ organizationalUnitName         = Organizational Unit Name (e.g., section)
 organizationalUnitName_default = Dev
 
 commonName                     = Common Name (e.g. server FQDN or YOUR name)
-commonName_default             = www.localhost.com
+commonName_default             = $domain
 
 emailAddress                   = Email Address
 emailAddress_default           = test@localhost.com

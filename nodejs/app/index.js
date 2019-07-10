@@ -59,8 +59,8 @@ const router = routes.getRouter(port, process.pid, websocket, websocketHost);
 app.use(router.routes()).use(router.allowedMethods());
 
 const options = {
-  key: fs.readFileSync(path.join(__dirname, '../../certificate/localhost.key')),
-  cert: fs.readFileSync(path.join(__dirname, '../../certificate/localhost.crt'))
+  key: fs.readFileSync(path.join(__dirname, '../../certificate/www.localhost.com.key')),
+  cert: fs.readFileSync(path.join(__dirname, '../../certificate/www.localhost.com.crt'))
 };
 
 const server = protocol === 'https'
@@ -141,8 +141,8 @@ else if (isInternal && websocket === 'ws') {
 else {
   // no websocket
   const options = {
-    key: fs.readFileSync(path.join(__dirname, '../../certificate/localhost.key')),
-    cert: fs.readFileSync(path.join(__dirname, '../../certificate/localhost.crt'))
+    key: fs.readFileSync(path.join(__dirname, '../../certificate/www.localhost.com.key')),
+    cert: fs.readFileSync(path.join(__dirname, '../../certificate/www.localhost.com.crt'))
   };
 
   const server = protocol === 'https'

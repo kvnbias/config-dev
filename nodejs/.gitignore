@@ -9,3 +9,5 @@ app/assets/socket.io/*
 !app/assets/socket.io/.gitkeep
 app/assets/sockjs/*
 !app/assets/sockjs/.gitkeep
+app/assets/clusterws/*
+!app/assets/clusterws/.gitkeep
